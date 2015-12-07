@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA731C160F46000B8710 /* AppDelegate.swift */; };
+		B56BDA791C160F46000B8710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA771C160F46000B8710 /* Main.storyboard */; };
+		B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */; };
+		B56BDA7E1C160F46000B8710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA7D1C160F46000B8710 /* Assets.xcassets */; };
+		B56BDA811C160F46000B8710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA7F1C160F46000B8710 /* LaunchScreen.storyboard */; };
+		B56BDA891C160F60000B8710 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA881C160F60000B8710 /* MapKit.framework */; };
+		B56BDA8B1C160F6A000B8710 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */; };
+		B56BDA8D1C160F71000B8710 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8C1C160F71000B8710 /* CoreMotion.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B56BDA701C160F46000B8710 /* iCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56BDA731C160F46000B8710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B56BDA781C160F46000B8710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B56BDA7B1C160F46000B8710 /* iCar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCar.xcdatamodel; sourceTree = "<group>"; };
+		B56BDA7D1C160F46000B8710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B56BDA801C160F46000B8710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B56BDA821C160F46000B8710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56BDA881C160F60000B8710 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B56BDA8C1C160F71000B8710 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B56BDA6D1C160F46000B8710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56BDA8D1C160F71000B8710 /* CoreMotion.framework in Frameworks */,
+				B56BDA8B1C160F6A000B8710 /* CoreLocation.framework in Frameworks */,
+				B56BDA891C160F60000B8710 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B56BDA671C160F46000B8710 = {
+			isa = PBXGroup;
+			children = (
+				B56BDA8C1C160F71000B8710 /* CoreMotion.framework */,
+				B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */,
+				B56BDA881C160F60000B8710 /* MapKit.framework */,
+				B56BDA721C160F46000B8710 /* iCar */,
+				B56BDA711C160F46000B8710 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B56BDA711C160F46000B8710 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B56BDA701C160F46000B8710 /* iCar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B56BDA721C160F46000B8710 /* iCar */ = {
+			isa = PBXGroup;
+			children = (
+				B56BDA731C160F46000B8710 /* AppDelegate.swift */,
+				B56BDA771C160F46000B8710 /* Main.storyboard */,
+				B56BDA7D1C160F46000B8710 /* Assets.xcassets */,
+				B56BDA7F1C160F46000B8710 /* LaunchScreen.storyboard */,
+				B56BDA821C160F46000B8710 /* Info.plist */,
+				B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */,
+			);
+			path = iCar;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B56BDA6F1C160F46000B8710 /* iCar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B56BDA851C160F46000B8710 /* Build configuration list for PBXNativeTarget "iCar" */;
+			buildPhases = (
+				B56BDA6C1C160F46000B8710 /* Sources */,
+				B56BDA6D1C160F46000B8710 /* Frameworks */,
+				B56BDA6E1C160F46000B8710 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCar;
+			productName = iCar;
+			productReference = B56BDA701C160F46000B8710 /* iCar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B56BDA681C160F46000B8710 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Gergely Kőrössy";
+				TargetAttributes = {
+					B56BDA6F1C160F46000B8710 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = B56BDA6B1C160F46000B8710 /* Build configuration list for PBXProject "iCar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B56BDA671C160F46000B8710;
+			productRefGroup = B56BDA711C160F46000B8710 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B56BDA6F1C160F46000B8710 /* iCar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B56BDA6E1C160F46000B8710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56BDA811C160F46000B8710 /* LaunchScreen.storyboard in Resources */,
+				B56BDA7E1C160F46000B8710 /* Assets.xcassets in Resources */,
+				B56BDA791C160F46000B8710 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B56BDA6C1C160F46000B8710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */,
+				B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B56BDA771C160F46000B8710 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B56BDA781C160F46000B8710 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B56BDA7F1C160F46000B8710 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B56BDA801C160F46000B8710 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B56BDA831C160F46000B8710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B56BDA841C160F46000B8710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B56BDA861C160F46000B8710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iCar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.bme.ios.iCar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B56BDA871C160F46000B8710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iCar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hu.bme.ios.iCar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B56BDA6B1C160F46000B8710 /* Build configuration list for PBXProject "iCar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56BDA831C160F46000B8710 /* Debug */,
+				B56BDA841C160F46000B8710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B56BDA851C160F46000B8710 /* Build configuration list for PBXNativeTarget "iCar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56BDA861C160F46000B8710 /* Debug */,
+				B56BDA871C160F46000B8710 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B56BDA7B1C160F46000B8710 /* iCar.xcdatamodel */,
+			);
+			currentVersion = B56BDA7B1C160F46000B8710 /* iCar.xcdatamodel */;
+			path = iCar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B56BDA681C160F46000B8710 /* Project object */;
+}
