@@ -12,6 +12,7 @@
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="odometer" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="refillQnty" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -39,7 +40,7 @@
     </entity>
     <elements>
         <element name="Car" positionX="-189" positionY="-36" width="128" height="135"/>
-        <element name="RefillLog" positionX="-524" positionY="-57" width="128" height="165"/>
+        <element name="RefillLog" positionX="-524" positionY="-57" width="128" height="180"/>
         <element name="Ride" positionX="142" positionY="-18" width="128" height="135"/>
         <element name="RidePoint" positionX="-9" positionY="227" width="128" height="178"/>
     </elements>
