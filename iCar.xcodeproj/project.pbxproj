@@ -15,6 +15,7 @@
 		B536BBE11C163CC300633A47 /* RidePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD91C163CC300633A47 /* RidePoint.swift */; settings = {ASSET_TAGS = (); }; };
 		B536BBE21C163CC300633A47 /* Ride+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		B536BBE31C163CC300633A47 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBDB1C163CC300633A47 /* Ride.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBE51C16405100633A47 /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBE41C16405100633A47 /* CarTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA731C160F46000B8710 /* AppDelegate.swift */; };
 		B56BDA791C160F46000B8710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA771C160F46000B8710 /* Main.storyboard */; };
 		B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */; };
@@ -34,6 +35,7 @@
 		B536BBD91C163CC300633A47 /* RidePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidePoint.swift; sourceTree = "<group>"; };
 		B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ride+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B536BBDB1C163CC300633A47 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
+		B536BBE41C16405100633A47 /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		B56BDA701C160F46000B8710 /* iCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56BDA731C160F46000B8710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B56BDA781C160F46000B8710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				B536BBD91C163CC300633A47 /* RidePoint.swift */,
 				B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */,
 				B536BBDB1C163CC300633A47 /* Ride.swift */,
+				B536BBE41C16405100633A47 /* CarTableViewCell.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */,
 				B536BBDC1C163CC300633A47 /* RefillLog+CoreDataProperties.swift in Sources */,
 				B536BBDD1C163CC300633A47 /* RefillLog.swift in Sources */,
+				B536BBE51C16405100633A47 /* CarTableViewCell.swift in Sources */,
 				B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
