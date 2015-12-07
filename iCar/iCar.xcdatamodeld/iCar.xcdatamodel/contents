@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
-    <entity name="Car" syncable="YES">
+    <entity name="Car" representedClassName=".Car" syncable="YES">
         <attribute name="enabled" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="licensePlate" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -8,7 +8,7 @@
         <relationship name="refilllogs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RefillLog" inverseName="car" inverseEntity="RefillLog" syncable="YES"/>
         <relationship name="rides" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ride" inverseName="car" inverseEntity="Ride" syncable="YES"/>
     </entity>
-    <entity name="RefillLog" syncable="YES">
+    <entity name="RefillLog" representedClassName=".RefillLog" syncable="YES">
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -19,7 +19,7 @@
         <attribute name="unitPrice" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="car" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="refilllogs" inverseEntity="Car" syncable="YES"/>
     </entity>
-    <entity name="Ride" syncable="YES">
+    <entity name="Ride" representedClassName=".Ride" syncable="YES">
         <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -27,7 +27,7 @@
         <relationship name="car" maxCount="1" deletionRule="Nullify" destinationEntity="Car" inverseName="rides" inverseEntity="Car" syncable="YES"/>
         <relationship name="points" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RidePoint" inverseName="ride" inverseEntity="RidePoint" syncable="YES"/>
     </entity>
-    <entity name="RidePoint" syncable="YES">
+    <entity name="RidePoint" representedClassName=".RidePoint" syncable="YES">
         <attribute name="accFrontal" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="accLateral" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="altitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -42,6 +42,6 @@
         <element name="Car" positionX="-189" positionY="-36" width="128" height="135"/>
         <element name="RefillLog" positionX="-524" positionY="-57" width="128" height="180"/>
         <element name="Ride" positionX="142" positionY="-18" width="128" height="135"/>
-        <element name="RidePoint" positionX="-9" positionY="227" width="128" height="178"/>
+        <element name="RidePoint" positionX="-9" positionY="227" width="128" height="180"/>
     </elements>
 </model>

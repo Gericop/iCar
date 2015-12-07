@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B536BBDC1C163CC300633A47 /* RefillLog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD41C163CC300633A47 /* RefillLog+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBDD1C163CC300633A47 /* RefillLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD51C163CC300633A47 /* RefillLog.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBDE1C163CC300633A47 /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD61C163CC300633A47 /* Car+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBDF1C163CC300633A47 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD71C163CC300633A47 /* Car.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD81C163CC300633A47 /* RidePoint+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBE11C163CC300633A47 /* RidePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBD91C163CC300633A47 /* RidePoint.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBE21C163CC300633A47 /* Ride+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		B536BBE31C163CC300633A47 /* Ride.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBDB1C163CC300633A47 /* Ride.swift */; settings = {ASSET_TAGS = (); }; };
 		B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA731C160F46000B8710 /* AppDelegate.swift */; };
 		B56BDA791C160F46000B8710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA771C160F46000B8710 /* Main.storyboard */; };
 		B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */; };
@@ -18,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B536BBD41C163CC300633A47 /* RefillLog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RefillLog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B536BBD51C163CC300633A47 /* RefillLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillLog.swift; sourceTree = "<group>"; };
+		B536BBD61C163CC300633A47 /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B536BBD71C163CC300633A47 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		B536BBD81C163CC300633A47 /* RidePoint+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RidePoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B536BBD91C163CC300633A47 /* RidePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidePoint.swift; sourceTree = "<group>"; };
+		B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Ride+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B536BBDB1C163CC300633A47 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		B56BDA701C160F46000B8710 /* iCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56BDA731C160F46000B8710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B56BDA781C160F46000B8710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +88,14 @@
 				B56BDA7F1C160F46000B8710 /* LaunchScreen.storyboard */,
 				B56BDA821C160F46000B8710 /* Info.plist */,
 				B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */,
+				B536BBD41C163CC300633A47 /* RefillLog+CoreDataProperties.swift */,
+				B536BBD51C163CC300633A47 /* RefillLog.swift */,
+				B536BBD61C163CC300633A47 /* Car+CoreDataProperties.swift */,
+				B536BBD71C163CC300633A47 /* Car.swift */,
+				B536BBD81C163CC300633A47 /* RidePoint+CoreDataProperties.swift */,
+				B536BBD91C163CC300633A47 /* RidePoint.swift */,
+				B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */,
+				B536BBDB1C163CC300633A47 /* Ride.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -146,7 +170,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B536BBE11C163CC300633A47 /* RidePoint.swift in Sources */,
+				B536BBE21C163CC300633A47 /* Ride+CoreDataProperties.swift in Sources */,
 				B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */,
+				B536BBE31C163CC300633A47 /* Ride.swift in Sources */,
+				B536BBDE1C163CC300633A47 /* Car+CoreDataProperties.swift in Sources */,
+				B536BBDF1C163CC300633A47 /* Car.swift in Sources */,
+				B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */,
+				B536BBDC1C163CC300633A47 /* RefillLog+CoreDataProperties.swift in Sources */,
+				B536BBDD1C163CC300633A47 /* RefillLog.swift in Sources */,
 				B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +327,7 @@
 				B56BDA871C160F46000B8710 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
