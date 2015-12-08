@@ -14,13 +14,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PWD-aX-9nJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="9eO-MJ-b0o" detailTextLabel="2e6-iL-Bbp" style="IBUITableViewCellStyleSubtitle" id="PWD-aX-9nJ">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PWD-aX-9nJ" id="deM-s4-PhO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9eO-MJ-b0o">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2e6-iL-Bbp">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="VFM-vc-7he" kind="push" id="lCi-tP-cN5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,12 +49,75 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Refill log" id="fCv-lO-SGp">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="9J0-hT-feo"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FEW-Xq-6yr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FEW-Xq-6yr">
+                            <connections>
+                                <segue destination="j50-gQ-A5i" kind="push" id="aux-2u-3gG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rky-xn-VP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1685" y="-159"/>
+        </scene>
+        <!--Refill details-->
+        <scene sceneID="0Hs-WT-Com">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="VFM-vc-7he" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ibo-ie-eAU"/>
+                        <viewControllerLayoutGuide type="bottom" id="fYX-nk-pwF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Pl-7x-O82">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bnz-g3-GeK">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bnz-g3-GeK" firstAttribute="top" secondItem="ibo-ie-eAU" secondAttribute="bottom" id="2Ut-Qj-OLA"/>
+                            <constraint firstItem="Bnz-g3-GeK" firstAttribute="leading" secondItem="6Pl-7x-O82" secondAttribute="leading" id="N9A-JP-POo"/>
+                            <constraint firstAttribute="trailing" secondItem="Bnz-g3-GeK" secondAttribute="trailing" id="uvR-tq-keu"/>
+                            <constraint firstItem="fYX-nk-pwF" firstAttribute="top" secondItem="Bnz-g3-GeK" secondAttribute="bottom" id="w3a-tv-v3t"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Refill details" id="boY-Sk-9Fc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="qhg-fx-QCt">
+                            <connections>
+                                <segue destination="j50-gQ-A5i" kind="push" id="KG8-gS-rNV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZFG-f6-ZzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="-159"/>
+        </scene>
+        <!--Refill details-->
+        <scene sceneID="jwz-w8-naH">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="j50-gQ-A5i" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tvu-Ld-bMv"/>
+                        <viewControllerLayoutGuide type="bottom" id="xvD-Tg-Nme"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b5I-uz-QYT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Refill details" id="Rqf-Zy-xj4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nwf-zq-EGB"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gf-vt-nRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2120" y="-794"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oZT-Bk-opn">
@@ -189,7 +271,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDj-ec-5Fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="1220"/>
+            <point key="canvasLocation" x="1153" y="1262"/>
         </scene>
         <!--Car details-->
         <scene sceneID="MHN-Jm-bFh">
@@ -257,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxM-Ty-leh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1555" y="1220"/>
+            <point key="canvasLocation" x="1555" y="1262"/>
         </scene>
         <!--Rides-->
         <scene sceneID="iKA-qm-9bn">
@@ -295,7 +377,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adV-Pu-xrv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="1220"/>
+            <point key="canvasLocation" x="621" y="1262"/>
         </scene>
     </scenes>
     <resources>
@@ -304,6 +386,7 @@
         <image name="icon_ride" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="KG8-gS-rNV"/>
         <segue reference="JMf-qX-Yac"/>
     </inferredMetricsTieBreakers>
 </document>
