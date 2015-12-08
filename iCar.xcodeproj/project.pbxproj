@@ -26,6 +26,7 @@
 		B56BDA891C160F60000B8710 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA881C160F60000B8710 /* MapKit.framework */; };
 		B56BDA8B1C160F6A000B8710 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */; };
 		B56BDA8D1C160F71000B8710 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8C1C160F71000B8710 /* CoreMotion.framework */; };
+		B5CBA5911C1732F20026F9C3 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBA5901C1732F20026F9C3 /* SensorManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B56BDA881C160F60000B8710 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B56BDA8C1C160F71000B8710 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		B5CBA5901C1732F20026F9C3 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				B536BBE41C16405100633A47 /* CarTableViewCell.swift */,
 				B536BBE61C16466200633A47 /* CarTableViewController.swift */,
 				B536BBE81C164E9400633A47 /* CarDetailsViewController.swift */,
+				B5CBA5901C1732F20026F9C3 /* SensorManager.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -140,6 +143,11 @@
 				TargetAttributes = {
 					B56BDA6F1C160F46000B8710 = {
 						CreatedOnToolsVersion = 7.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -188,6 +196,7 @@
 				B536BBDE1C163CC300633A47 /* Car+CoreDataProperties.swift in Sources */,
 				B536BBDF1C163CC300633A47 /* Car.swift in Sources */,
 				B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */,
+				B5CBA5911C1732F20026F9C3 /* SensorManager.swift in Sources */,
 				B536BBDC1C163CC300633A47 /* RefillLog+CoreDataProperties.swift in Sources */,
 				B536BBDD1C163CC300633A47 /* RefillLog.swift in Sources */,
 				B536BBE51C16405100633A47 /* CarTableViewCell.swift in Sources */,
