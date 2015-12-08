@@ -8,13 +8,13 @@
         <!--Refill log-->
         <scene sceneID="dgO-O8-x5T">
             <objects>
-                <tableViewController id="3Ft-lJ-8lC" sceneMemberID="viewController">
+                <tableViewController id="3Ft-lJ-8lC" customClass="RefillTableViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cf0-6L-4y5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="9eO-MJ-b0o" detailTextLabel="2e6-iL-Bbp" style="IBUITableViewCellStyleSubtitle" id="PWD-aX-9nJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RefillLogCell" textLabel="9eO-MJ-b0o" detailTextLabel="2e6-iL-Bbp" style="IBUITableViewCellStyleSubtitle" id="PWD-aX-9nJ">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PWD-aX-9nJ" id="deM-s4-PhO">
@@ -51,7 +51,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="9J0-hT-feo"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FEW-Xq-6yr">
                             <connections>
-                                <segue destination="j50-gQ-A5i" kind="push" id="aux-2u-3gG"/>
+                                <segue destination="j50-gQ-A5i" kind="push" identifier="AddRefillLog" id="aux-2u-3gG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -100,7 +100,7 @@
         <!--Refill details-->
         <scene sceneID="jwz-w8-naH">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="j50-gQ-A5i" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="j50-gQ-A5i" customClass="RefillEditorViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tvu-Ld-bMv"/>
                         <viewControllerLayoutGuide type="bottom" id="xvD-Tg-Nme"/>
@@ -108,12 +108,119 @@
                     <view key="view" contentMode="scaleToFill" id="b5I-uz-QYT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-Er-dFb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xos-Wy-IRS">
+                                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="liter" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWR-e3-pTf">
+                                                <rect key="frame" x="207" y="0.0" width="97" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bW-36-Oql">
+                                                <rect key="frame" x="0.0" y="4" width="98" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-Mi-xHa">
+                                        <rect key="frame" x="8" y="46" width="304" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$ / liter" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gi-rQ-iW2">
+                                                <rect key="frame" x="207" y="0.0" width="97" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Unit price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmW-3F-h0D">
+                                                <rect key="frame" x="0.0" y="4" width="98" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="96t-XI-SfT">
+                                        <rect key="frame" x="8" y="84" width="304" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l23-i7-9EA">
+                                                <rect key="frame" x="0.0" y="4" width="98" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPS-4z-Mg0">
+                                                <rect key="frame" x="118" y="4" width="178" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-W2-iFP">
+                                        <rect key="frame" x="8" y="122" width="304" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bf9-14-8i5">
+                                                <rect key="frame" x="106" y="0.0" width="198" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6g-Xe-Pkk">
+                                                <rect key="frame" x="0.0" y="4" width="98" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mRN-4c-5U1">
+                                        <rect key="frame" x="8" y="160" width="304" height="75"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIv-OW-668">
+                                                <rect key="frame" x="0.0" y="4" width="98" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TFg-eT-bmg">
+                                                <rect key="frame" x="72" y="0.0" width="232" height="75"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iMj-pU-WnC">
+                                        <rect key="frame" x="8" y="243" width="304" height="253"/>
+                                    </mapView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xvD-Tg-Nme" firstAttribute="top" secondItem="GAw-Er-dFb" secondAttribute="bottom" id="l7X-AZ-4jn"/>
+                            <constraint firstItem="GAw-Er-dFb" firstAttribute="top" secondItem="tvu-Ld-bMv" secondAttribute="bottom" id="qnh-b8-cjs"/>
+                            <constraint firstItem="GAw-Er-dFb" firstAttribute="leading" secondItem="b5I-uz-QYT" secondAttribute="leading" id="vGe-df-tm5"/>
+                            <constraint firstAttribute="trailing" secondItem="GAw-Er-dFb" secondAttribute="trailing" id="wk3-NT-zG6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Refill details" id="Rqf-Zy-xj4">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nwf-zq-EGB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nwf-zq-EGB">
+                            <connections>
+                                <action selector="saveButtonTap:" destination="j50-gQ-A5i" id="biS-pd-wd9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="carPicker" destination="TFg-eT-bmg" id="Kbj-UP-teD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gf-vt-nRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +303,9 @@
                             <outlet property="delegate" destination="riL-an-ozV" id="dk4-Up-Tyq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Rides" id="Z15-Sw-xSD"/>
+                    <navigationItem key="navigationItem" title="Rides" id="Z15-Sw-xSD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GCO-88-oBT"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxj-7i-mUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,7 +495,7 @@
         <image name="icon_ride" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KG8-gS-rNV"/>
+        <segue reference="aux-2u-3gG"/>
         <segue reference="JMf-qX-Yac"/>
     </inferredMetricsTieBreakers>
 </document>

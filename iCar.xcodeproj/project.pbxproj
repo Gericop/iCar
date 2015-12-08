@@ -27,6 +27,8 @@
 		B56BDA8B1C160F6A000B8710 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */; };
 		B56BDA8D1C160F71000B8710 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8C1C160F71000B8710 /* CoreMotion.framework */; };
 		B5CBA5911C1732F20026F9C3 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBA5901C1732F20026F9C3 /* SensorManager.swift */; settings = {ASSET_TAGS = (); }; };
+		B5F115211C176829006B87A1 /* RefillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F115201C176829006B87A1 /* RefillTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B5F115231C176EBF006B87A1 /* RefillEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B56BDA8C1C160F71000B8710 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B5CBA5901C1732F20026F9C3 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		B5F115201C176829006B87A1 /* RefillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillTableViewController.swift; sourceTree = "<group>"; };
+		B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +75,10 @@
 		B56BDA671C160F46000B8710 = {
 			isa = PBXGroup;
 			children = (
+				B56BDA721C160F46000B8710 /* iCar */,
 				B56BDA8C1C160F71000B8710 /* CoreMotion.framework */,
 				B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */,
 				B56BDA881C160F60000B8710 /* MapKit.framework */,
-				B56BDA721C160F46000B8710 /* iCar */,
 				B56BDA711C160F46000B8710 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,12 +94,26 @@
 		B56BDA721C160F46000B8710 /* iCar */ = {
 			isa = PBXGroup;
 			children = (
+				B5F1151F1C176794006B87A1 /* Model */,
 				B56BDA731C160F46000B8710 /* AppDelegate.swift */,
 				B56BDA771C160F46000B8710 /* Main.storyboard */,
 				B56BDA7D1C160F46000B8710 /* Assets.xcassets */,
 				B56BDA7F1C160F46000B8710 /* LaunchScreen.storyboard */,
 				B56BDA821C160F46000B8710 /* Info.plist */,
 				B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */,
+				B536BBE41C16405100633A47 /* CarTableViewCell.swift */,
+				B536BBE61C16466200633A47 /* CarTableViewController.swift */,
+				B536BBE81C164E9400633A47 /* CarDetailsViewController.swift */,
+				B5CBA5901C1732F20026F9C3 /* SensorManager.swift */,
+				B5F115201C176829006B87A1 /* RefillTableViewController.swift */,
+				B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */,
+			);
+			path = iCar;
+			sourceTree = "<group>";
+		};
+		B5F1151F1C176794006B87A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				B536BBD41C163CC300633A47 /* RefillLog+CoreDataProperties.swift */,
 				B536BBD51C163CC300633A47 /* RefillLog.swift */,
 				B536BBD61C163CC300633A47 /* Car+CoreDataProperties.swift */,
@@ -104,12 +122,8 @@
 				B536BBD91C163CC300633A47 /* RidePoint.swift */,
 				B536BBDA1C163CC300633A47 /* Ride+CoreDataProperties.swift */,
 				B536BBDB1C163CC300633A47 /* Ride.swift */,
-				B536BBE41C16405100633A47 /* CarTableViewCell.swift */,
-				B536BBE61C16466200633A47 /* CarTableViewController.swift */,
-				B536BBE81C164E9400633A47 /* CarDetailsViewController.swift */,
-				B5CBA5901C1732F20026F9C3 /* SensorManager.swift */,
 			);
-			path = iCar;
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 				B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */,
 				B536BBE31C163CC300633A47 /* Ride.swift in Sources */,
 				B536BBE71C16466200633A47 /* CarTableViewController.swift in Sources */,
+				B5F115211C176829006B87A1 /* RefillTableViewController.swift in Sources */,
 				B536BBDE1C163CC300633A47 /* Car+CoreDataProperties.swift in Sources */,
 				B536BBDF1C163CC300633A47 /* Car.swift in Sources */,
 				B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */,
@@ -200,6 +215,7 @@
 				B536BBDC1C163CC300633A47 /* RefillLog+CoreDataProperties.swift in Sources */,
 				B536BBDD1C163CC300633A47 /* RefillLog.swift in Sources */,
 				B536BBE51C16405100633A47 /* CarTableViewCell.swift in Sources */,
+				B5F115231C176EBF006B87A1 /* RefillEditorViewController.swift in Sources */,
 				B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
