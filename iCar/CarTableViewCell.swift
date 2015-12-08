@@ -10,15 +10,23 @@ import UIKit
 
 class CarTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var enablerSwitch: UISwitch!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var licensePlateLabel: UILabel!
+    
+    var car : Car!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    @IBAction func carEnablerChanged(sender: AnyObject) {
+        car.enabled = enablerSwitch.on
+        AppDelegate.sharedAppDelegate.saveContext()
+    }
 }

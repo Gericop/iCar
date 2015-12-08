@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fjc-C9-usi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Refill log-->
@@ -83,12 +84,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bta-kI-tT6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="otj-NO-ZVg" detailTextLabel="dYE-hN-MTx" style="IBUITableViewCellStyleSubtitle" id="Bta-kI-tT6">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bta-kI-tT6" id="f1E-Ma-c1A">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="otj-NO-ZVg">
+                                            <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dYE-hN-MTx">
+                                            <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -106,19 +123,49 @@
         <!--Cars-->
         <scene sceneID="dau-eP-gWJ">
             <objects>
-                <tableViewController id="RQ3-Uk-iaU" sceneMemberID="viewController">
+                <tableViewController id="RQ3-Uk-iaU" customClass="CarTableViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DB4-mv-htn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="HBz-Au-Zxy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CarCell" id="HBz-Au-Zxy" customClass="CarTableViewCell" customModule="iCar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HBz-Au-Zxy" id="rtz-y6-g30">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoJ-Go-nsW">
+                                            <rect key="frame" x="8" y="6" width="214" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91T-lj-8uM">
+                                            <rect key="frame" x="8" y="23" width="214" height="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bf1-Za-zTL">
+                                            <rect key="frame" x="230" y="6" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="carEnablerChanged:" destination="HBz-Au-Zxy" eventType="valueChanged" id="RHq-gm-Og9"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Bf1-Za-zTL" firstAttribute="centerY" secondItem="rtz-y6-g30" secondAttribute="centerY" id="5c3-gR-HE6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Bf1-Za-zTL" secondAttribute="trailing" id="ndf-rW-1S5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="enablerSwitch" destination="Bf1-Za-zTL" id="yXN-p5-TDL"/>
+                                    <outlet property="licensePlateLabel" destination="91T-lj-8uM" id="0NI-Z3-tjb"/>
+                                    <outlet property="titleLabel" destination="DoJ-Go-nsW" id="JJ5-p4-hyD"/>
+                                    <segue destination="pYg-oT-61A" kind="push" id="LeA-py-PfL"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -126,11 +173,85 @@
                             <outlet property="delegate" destination="RQ3-Uk-iaU" id="BEZ-VW-W2x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cars" id="mER-TX-jha"/>
+                    <navigationItem key="navigationItem" title="Cars" id="mER-TX-jha">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="y1Q-sS-J1J">
+                            <connections>
+                                <segue destination="pYg-oT-61A" kind="push" identifier="AddCar" id="JMf-qX-Yac"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDj-ec-5Fh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1153" y="1220"/>
+        </scene>
+        <!--Car details-->
+        <scene sceneID="MHN-Jm-bFh">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" hidesBottomBarWhenPushed="YES" id="pYg-oT-61A" customClass="CarDetailsViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZQK-kE-AzV"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmk-Dt-Q76"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G00-m1-XMz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H08-lG-Cfn">
+                                <rect key="frame" x="16" y="72" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-PE-8SF">
+                                <rect key="frame" x="16" y="180" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbX-11-3vP">
+                                <rect key="frame" x="16" y="101" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="License plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4J-p8-Vt4">
+                                <rect key="frame" x="16" y="151" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="q4J-p8-Vt4" secondAttribute="trailing" id="9UN-HV-YOo"/>
+                            <constraint firstItem="sbX-11-3vP" firstAttribute="leading" secondItem="G00-m1-XMz" secondAttribute="leadingMargin" id="KzZ-0O-Pag"/>
+                            <constraint firstItem="aBq-PE-8SF" firstAttribute="leading" secondItem="G00-m1-XMz" secondAttribute="leadingMargin" id="LDX-KR-5XN"/>
+                            <constraint firstItem="aBq-PE-8SF" firstAttribute="top" secondItem="q4J-p8-Vt4" secondAttribute="bottom" constant="8" id="LP8-4m-xfs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H08-lG-Cfn" secondAttribute="trailing" id="P4P-67-s2X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sbX-11-3vP" secondAttribute="trailing" id="Q8k-f1-TUL"/>
+                            <constraint firstItem="q4J-p8-Vt4" firstAttribute="top" secondItem="sbX-11-3vP" secondAttribute="bottom" constant="20" id="TxK-Pv-8Yx"/>
+                            <constraint firstItem="H08-lG-Cfn" firstAttribute="top" secondItem="ZQK-kE-AzV" secondAttribute="bottom" constant="8" id="X47-uV-TVZ"/>
+                            <constraint firstItem="sbX-11-3vP" firstAttribute="top" secondItem="H08-lG-Cfn" secondAttribute="bottom" constant="8" id="cUU-HU-Faj"/>
+                            <constraint firstItem="q4J-p8-Vt4" firstAttribute="leading" secondItem="G00-m1-XMz" secondAttribute="leadingMargin" id="der-Mp-agE"/>
+                            <constraint firstItem="H08-lG-Cfn" firstAttribute="leading" secondItem="G00-m1-XMz" secondAttribute="leadingMargin" id="dgD-JJ-lsU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aBq-PE-8SF" secondAttribute="trailing" id="njo-tW-Q2p"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Car details" id="3Sl-fN-hdP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="BXJ-Tz-hZx">
+                            <connections>
+                                <action selector="saveButtonTap:" destination="pYg-oT-61A" id="EWt-lM-k0v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="carLicensePlate" destination="aBq-PE-8SF" id="ccM-Sv-61Q"/>
+                        <outlet property="carName" destination="sbX-11-3vP" id="dz6-8i-3m5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxM-Ty-leh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555" y="1220"/>
         </scene>
         <!--Rides-->
         <scene sceneID="iKA-qm-9bn">
@@ -171,4 +292,7 @@
             <point key="canvasLocation" x="621" y="1220"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JMf-qX-Yac"/>
+    </inferredMetricsTieBreakers>
 </document>
