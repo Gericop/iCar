@@ -60,7 +60,7 @@
         <scene sceneID="Wtx-xo-l54">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sUl-QD-Au5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Refills" id="fCA-6X-Ket"/>
+                    <tabBarItem key="tabBarItem" title="Refills" image="icon_gas" id="fCA-6X-Ket"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tag-w8-WSj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -263,7 +263,7 @@
         <scene sceneID="iKA-qm-9bn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QXr-KS-pfD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Rides" id="eOh-EL-xa7"/>
+                    <tabBarItem key="tabBarItem" title="Rides" image="icon_ride" id="eOh-EL-xa7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dup-lo-YsH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -282,7 +282,7 @@
         <scene sceneID="RO5-gU-bDA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wC1-ra-hVB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cars" id="uPR-s9-DBE"/>
+                    <tabBarItem key="tabBarItem" title="Cars" image="icon_car" id="uPR-s9-DBE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0V4-8c-27c">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -298,6 +298,11 @@
             <point key="canvasLocation" x="621" y="1220"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_car" width="24" height="24"/>
+        <image name="icon_gas" width="24" height="24"/>
+        <image name="icon_ride" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JMf-qX-Yac"/>
     </inferredMetricsTieBreakers>
