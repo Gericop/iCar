@@ -22,6 +22,13 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         return manager
     }()
     
+    lazy var motionManager: CMMotionManager! = {
+        let manager = CMMotionManager()
+        
+        
+        return manager
+    }()
+    
     var currentRide: Ride?
     
     var heading: Double?
@@ -45,6 +52,7 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         
         currentRide?.startDate = NSDate()
         
+        motionManager.startAccelerometerUpdates()
         locationManager.startUpdatingHeading()
         locationManager.startUpdatingLocation()
     }
@@ -52,6 +60,7 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
     func stopRide() {
         locationManager.stopUpdatingLocation()
         locationManager.stopUpdatingHeading()
+        motionManager.stopAccelerometerUpdates()
         
         currentRide?.endDate = NSDate()
         
@@ -111,8 +120,12 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         point.speed = location?.speed ?? -Double.infinity
         point.time = location?.timestamp ?? NSDate()
         
-        point.accFrontal = 0
-        point.accLateral = 0
+        // if the iphone is facing the Z direction pointing upwards along the Y, in portrait mode
+        var accFrontal = motionManager.accelerometerData?.acceleration.z ?? -Double.infinity
+        var accLateral = motionManager.accelerometerData?.acceleration.x ?? -Double.infinity
+        
+        point.accFrontal = accFrontal
+        point.accLateral = accLateral
     }
 }
 
