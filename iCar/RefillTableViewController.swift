@@ -39,7 +39,7 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
         let fetchRequest = NSFetchRequest(entityName:"RefillLog")
         
         
-        let sortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         fetchRequest.predicate = NSPredicate(format: "car.enabled == 1")
         
@@ -128,21 +128,6 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
             // AppDelegate.sharedAppDelegate.saveContext()
         }
     }
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     @IBAction func searchButtonTap(sender: AnyObject) {
         SensorManager.getManager().requestPermission()

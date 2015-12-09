@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreData
 
-class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, NSFetchedResultsControllerDelegate {
+class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, NSFetchedResultsControllerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
     var fetchedResultsController: NSFetchedResultsController!
     
@@ -23,6 +23,7 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
     @IBOutlet weak var carPicker: UIPickerView!
     
     @IBOutlet weak var locationMapView: MKMapView!
+    var mapAnnotation : MapPointAnnotation?
     
     var refillLog : RefillLog?
 
@@ -43,8 +44,14 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
             refreshTotalPrice()
             refillType.text = log.type
             carPicker.selectRow(0, inComponent: 0, animated: false)
-            //locationMapView.removeAnnotations()
+            
+            mapAnnotation = MapPointAnnotation()
+            let coords = CLLocationCoordinate2DMake(CLLocationDegrees(log.lat!), CLLocationDegrees(log.lon!))
+            mapAnnotation?.setCoordinate(coords)
+            locationMapView.addAnnotation(mapAnnotation!)
         }
+        
+        initMapView()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,6 +59,34 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
         super.viewWillAppear(animated)
     }
     
+    func initMapView() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+        gestureRecognizer.numberOfTapsRequired = 1
+        
+        let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: "handleTap:")
+        gestureRecognizer2.numberOfTapsRequired = 2
+        
+        gestureRecognizer.requireGestureRecognizerToFail(gestureRecognizer2)
+        
+        locationMapView.addGestureRecognizer(gestureRecognizer)
+        locationMapView.addGestureRecognizer(gestureRecognizer2)
+    }
+    
+    
+    func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .Ended && sender.numberOfTapsRequired == 1 {
+            let touch = sender.locationInView(locationMapView)
+            let coords = locationMapView.convertPoint(touch, toCoordinateFromView: locationMapView)
+            
+            if let oldMapAnnotation = mapAnnotation {
+               locationMapView.removeAnnotation(oldMapAnnotation)
+            }
+            
+            mapAnnotation = MapPointAnnotation()
+            mapAnnotation?.setCoordinate(coords)
+            locationMapView.addAnnotation(mapAnnotation!)
+        }
+    }
     
     
     @IBAction func saveButtonTap(sender: AnyObject) {
@@ -71,11 +106,13 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
         log.unitPrice = Double(unitPriceTextField.text!) ?? 0
         log.type = refillType.text
         
-        let loc = locationMapView.userLocation.location
+        let loc = mapAnnotation?.coordinate ?? locationMapView.userLocation.location?.coordinate
         
-        log.lat = loc?.coordinate.latitude ?? 0
-        log.lon = loc?.coordinate.longitude ?? 0
-        log.altitude = loc?.altitude ?? 0
+        log.lat = loc?.latitude ?? 0
+        log.lon = loc?.longitude ?? 0
+        log.altitude = 0 // deprecated
+        
+        print("\(log.lat!) @ \(log.lon!)")
         
         log.odometer = 0 // TODO
         
