@@ -22,6 +22,10 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         return manager
     }()
     
+    var currentRide: Ride?
+    
+    var heading: Double?
+    
     class func getManager() -> SensorManager {
         return instance
     }
@@ -36,19 +40,31 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         return status == .AuthorizedAlways
     }
     
-    func startRide() {
+    func startRide(ride: Ride) {
+        currentRide = ride
         
+        currentRide?.startDate = NSDate()
+        
+        locationManager.startUpdatingHeading()
+        locationManager.startUpdatingLocation()
     }
     
     func stopRide() {
+        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingHeading()
         
+        currentRide?.endDate = NSDate()
+        
+        AppDelegate.sharedAppDelegate.saveContext()
+        
+        currentRide = nil
     }
     
     // MARK: - CLLocationManagerDelegate
     
-    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+    /*func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
         
-        /*// Add another annotation to the map.
+        // Add another annotation to the map.
         let annotation = MKPointAnnotation()
         annotation.coordinate = newLocation.coordinate
         
@@ -68,7 +84,35 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
             mapView.showAnnotations(locations, animated: true)
         } else {
             NSLog("App is backgrounded. New location is %@", newLocation)
-        }*/
+        }
+    }*/
+    
+    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        heading = newHeading.trueHeading ?? newHeading.magneticHeading
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let ride = currentRide {
+            createRidePoint(ride, heading: heading, location: locations.last)
+        }
+    }
+    
+    private func createRidePoint(ride:Ride, heading:Double?, location:CLLocation?) {
+        let moc = AppDelegate.sharedAppDelegate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("RidePoint", inManagedObjectContext: moc)
+        
+        let point = RidePoint(entity: entity!, insertIntoManagedObjectContext:moc)
+        
+        point.ride = ride
+        point.bearing = heading ?? -Double.infinity
+        point.lat = location?.coordinate.latitude ?? -Double.infinity
+        point.lon = location?.coordinate.longitude ?? -Double.infinity
+        point.altitude = location?.altitude ?? -Double.infinity
+        point.speed = location?.speed ?? -Double.infinity
+        point.time = location?.timestamp ?? NSDate()
+        
+        point.accFrontal = 0
+        point.accLateral = 0
     }
 }
 
