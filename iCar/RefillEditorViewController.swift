@@ -123,7 +123,16 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
                 createRefillLog()
             }
             
-            self.navigationController!.popViewControllerAnimated(true)
+            let viewControllers = self.navigationController?.viewControllers
+            
+            for vc in viewControllers! {
+                if vc.isKindOfClass(RefillTableViewController) {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                    break
+                }
+            }
+            
+            //self.navigationController!.popViewControllerAnimated(true)
         }
     }
     
