@@ -12,7 +12,7 @@ import CoreMotion
 import CoreData
 
 class SensorManager:NSObject, CLLocationManagerDelegate {
-    static let instance = SensorManager()
+    private static let instance:SensorManager = SensorManager()
     
     lazy var locationManager: CLLocationManager! = {
         let manager = CLLocationManager()
@@ -22,8 +22,18 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         return manager
     }()
     
-    func getSingleLocation() {
+    class func getManager() -> SensorManager {
+        return instance
+    }
+    
+    func requestPermission() {
+        locationManager.requestAlwaysAuthorization()
+    }
+    
+    func isLocationAvailable() -> Bool {
+        let status = CLLocationManager.authorizationStatus()
         
+        return status == .AuthorizedAlways
     }
     
     func startRide() {

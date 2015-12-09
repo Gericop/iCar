@@ -29,6 +29,8 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
         tableView.reloadData()
         
         super.viewWillAppear(animated)
+        
+        SensorManager.getManager().requestPermission()
     }
     
     func fetchRefills() {
@@ -66,7 +68,7 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
         
         let refill = fetchedResultsController.objectAtIndexPath(indexPath) as! RefillLog
         
-        cell.textLabel?.text = "\(refill.refillQnty) liter"
+        cell.textLabel?.text = "\(refill.refillQnty!) liter"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
@@ -142,6 +144,9 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
     }
     */
 
+    @IBAction func searchButtonTap(sender: AnyObject) {
+        SensorManager.getManager().requestPermission()
+    }
     
     // MARK: - Navigation
 
