@@ -664,12 +664,80 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rides" id="Z15-Sw-xSD">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GCO-88-oBT"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GCO-88-oBT">
+                            <connections>
+                                <segue destination="F49-tr-w6J" kind="push" identifier="AddRide" id="iOX-QI-zzI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxj-7i-mUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1685" y="558"/>
+        </scene>
+        <!--Ride details-->
+        <scene sceneID="zTB-LE-ksi">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" hidesBottomBarWhenPushed="YES" id="F49-tr-w6J" customClass="RideDetailsViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xuf-ZS-yOP"/>
+                        <viewControllerLayoutGuide type="bottom" id="V4i-Xw-ssZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2cG-RS-MZ3">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSy-Ua-P2c">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVa-0f-3H6">
+                                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Sh-5h-Wlk">
+                                        <rect key="frame" x="8" y="37" width="304" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SkM-Xd-cFo">
+                                        <rect key="frame" x="8" y="75" width="304" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAf-iA-eiQ">
+                                        <rect key="frame" x="8" y="104" width="304" height="124"/>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvZ-lo-W3a">
+                                        <rect key="frame" x="8" y="236" width="304" height="30"/>
+                                        <state key="normal" title="Map"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwK-wg-JQq">
+                                        <rect key="frame" x="8" y="274" width="304" height="30"/>
+                                        <state key="normal" title="Acceleration"/>
+                                    </button>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GSy-Ua-P2c" secondAttribute="trailing" id="B0t-uc-8xy"/>
+                            <constraint firstItem="GSy-Ua-P2c" firstAttribute="leading" secondItem="2cG-RS-MZ3" secondAttribute="leading" id="O5c-cO-lLa"/>
+                            <constraint firstItem="GSy-Ua-P2c" firstAttribute="top" secondItem="Xuf-ZS-yOP" secondAttribute="bottom" id="OqJ-PQ-i0C"/>
+                            <constraint firstItem="V4i-Xw-ssZ" firstAttribute="top" secondItem="GSy-Ua-P2c" secondAttribute="bottom" id="dpd-jn-X1L"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Ride details" id="Kn7-30-24q">
+                        <barButtonItem key="rightBarButtonItem" title="Start" id="PaM-fp-XvQ"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWO-Y1-5y0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="560"/>
         </scene>
         <!--Cars-->
         <scene sceneID="dau-eP-gWJ">
