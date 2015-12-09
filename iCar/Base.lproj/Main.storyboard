@@ -73,14 +73,14 @@
                         <viewControllerLayoutGuide type="bottom" id="fYX-nk-pwF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Pl-7x-O82">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WX-RO-1fg">
-                                <rect key="frame" x="0.0" y="32" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="496"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9I1-i9-FjF">
-                                        <rect key="frame" x="8" y="0.0" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="304" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="liter" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-FN-zos">
                                                 <rect key="frame" x="207" y="0.0" width="97" height="30"/>
@@ -114,7 +114,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGF-82-LXW">
-                                        <rect key="frame" x="8" y="38" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="46" width="304" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$ / liter" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-Ok-h2t">
                                                 <rect key="frame" x="207" y="0.0" width="97" height="30"/>
@@ -148,7 +148,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PK1-2P-rM0">
-                                        <rect key="frame" x="8" y="76" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="84" width="304" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC9-Wh-VEb">
                                                 <rect key="frame" x="0.0" y="4" width="98" height="21"/>
@@ -177,7 +177,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvF-oF-jK6">
-                                        <rect key="frame" x="8" y="114" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="122" width="304" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="type" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aX8-Oj-kbl">
                                                 <rect key="frame" x="106" y="0.0" width="198" height="30"/>
@@ -206,7 +206,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-GW-Cqy">
-                                        <rect key="frame" x="8" y="190" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="198" width="304" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ozu-jD-Ygp">
                                                 <rect key="frame" x="53" y="0.0" width="251" height="30"/>
@@ -234,13 +234,13 @@
                                         </constraints>
                                     </view>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMU-Un-UHN">
-                                        <rect key="frame" x="8" y="228" width="304" height="289"/>
+                                        <rect key="frame" x="8" y="236" width="304" height="260"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="289" id="eDC-ZJ-o01"/>
+                                            <constraint firstAttribute="height" constant="260" id="eDC-ZJ-o01"/>
                                         </constraints>
                                     </mapView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLH-2h-0Do">
-                                        <rect key="frame" x="8" y="152" width="304" height="30"/>
+                                        <rect key="frame" x="8" y="160" width="304" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="km" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WpG-YI-6eF">
                                                 <rect key="frame" x="106" y="0.0" width="198" height="30"/>
@@ -279,13 +279,13 @@
                                     <constraint firstItem="uvF-oF-jK6" firstAttribute="trailing" secondItem="PK1-2P-rM0" secondAttribute="trailing" id="Iyo-WS-FmV"/>
                                     <constraint firstItem="nGF-82-LXW" firstAttribute="top" secondItem="9I1-i9-FjF" secondAttribute="bottom" constant="8" symbolic="YES" id="LEZ-WV-FUj"/>
                                     <constraint firstItem="YMU-Un-UHN" firstAttribute="leading" secondItem="Cs7-GW-Cqy" secondAttribute="leading" id="WKG-eX-NAN"/>
-                                    <constraint firstItem="9I1-i9-FjF" firstAttribute="top" secondItem="5WX-RO-1fg" secondAttribute="top" id="a2U-mn-jzZ"/>
+                                    <constraint firstItem="9I1-i9-FjF" firstAttribute="top" secondItem="5WX-RO-1fg" secondAttribute="top" constant="8" id="a2U-mn-jzZ"/>
                                     <constraint firstItem="oLH-2h-0Do" firstAttribute="trailing" secondItem="Cs7-GW-Cqy" secondAttribute="trailing" id="cLR-WJ-yNh"/>
                                     <constraint firstItem="oLH-2h-0Do" firstAttribute="trailing" secondItem="uvF-oF-jK6" secondAttribute="trailing" id="ciY-wP-gBW"/>
                                     <constraint firstItem="uvF-oF-jK6" firstAttribute="leading" secondItem="5WX-RO-1fg" secondAttribute="leadingMargin" id="e7w-wn-q4o"/>
                                     <constraint firstItem="YMU-Un-UHN" firstAttribute="top" secondItem="Cs7-GW-Cqy" secondAttribute="bottom" constant="8" symbolic="YES" id="etT-8p-y9f"/>
                                     <constraint firstItem="PK1-2P-rM0" firstAttribute="top" secondItem="nGF-82-LXW" secondAttribute="bottom" constant="8" symbolic="YES" id="hhI-xd-Sxb"/>
-                                    <constraint firstAttribute="bottom" secondItem="YMU-Un-UHN" secondAttribute="bottom" constant="-56" id="jJ7-bu-vqS"/>
+                                    <constraint firstAttribute="bottom" secondItem="YMU-Un-UHN" secondAttribute="bottom" id="jJ7-bu-vqS"/>
                                     <constraint firstItem="nGF-82-LXW" firstAttribute="trailing" secondItem="PK1-2P-rM0" secondAttribute="trailing" id="k0v-Bc-txr"/>
                                     <constraint firstItem="uvF-oF-jK6" firstAttribute="leading" secondItem="PK1-2P-rM0" secondAttribute="leading" id="k6j-rc-K2V"/>
                                     <constraint firstItem="Cs7-GW-Cqy" firstAttribute="top" secondItem="oLH-2h-0Do" secondAttribute="bottom" constant="8" symbolic="YES" id="ljp-X5-Ujf"/>
@@ -299,11 +299,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5WX-RO-1fg" firstAttribute="leading" secondItem="6Pl-7x-O82" secondAttribute="leading" id="10X-Av-j1i"/>
-                            <constraint firstItem="fYX-nk-pwF" firstAttribute="top" secondItem="5WX-RO-1fg" secondAttribute="bottom" constant="32" id="A0n-4n-BOe"/>
+                            <constraint firstItem="fYX-nk-pwF" firstAttribute="top" secondItem="5WX-RO-1fg" secondAttribute="bottom" constant="8" id="A0n-4n-BOe"/>
                             <constraint firstAttribute="trailing" secondItem="5WX-RO-1fg" secondAttribute="trailing" id="JVx-eS-eaf"/>
-                            <constraint firstItem="5WX-RO-1fg" firstAttribute="centerY" secondItem="6Pl-7x-O82" secondAttribute="centerY" id="q7c-a6-foF"/>
+                            <constraint firstItem="5WX-RO-1fg" firstAttribute="centerY" secondItem="6Pl-7x-O82" secondAttribute="centerY" constant="-4" id="q7c-a6-foF"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Refuel details" id="boY-Sk-9Fc">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="qhg-fx-QCt">
                             <connections>
@@ -335,11 +336,11 @@
                         <viewControllerLayoutGuide type="bottom" id="xvD-Tg-Nme"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b5I-uz-QYT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAw-Er-dFb">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xos-Wy-IRS">
                                         <rect key="frame" x="8" y="8" width="304" height="30"/>
@@ -562,6 +563,7 @@
                             <constraint firstItem="GAw-Er-dFb" firstAttribute="leading" secondItem="b5I-uz-QYT" secondAttribute="leading" id="l3r-4R-JoJ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Refuel details" id="Rqf-Zy-xj4">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nwf-zq-EGB">
                             <connections>

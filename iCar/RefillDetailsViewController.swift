@@ -35,10 +35,10 @@ class RefillDetailsViewController: UIViewController {
             let car = log.car as! Car
             carField.text = "\(car.name!) [\(car.licensePlate!)]"
             
-            let dateFormatter = NSDateFormatter()
+            /*let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = .MediumStyle
             dateFormatter.timeStyle = .MediumStyle
-            navigationItem.prompt = dateFormatter.stringFromDate(log.time!)
+            navigationItem.prompt = dateFormatter.stringFromDate(log.time!)*/
             
             // setting map
             let mapAnnotation = MapPointAnnotation()
