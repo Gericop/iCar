@@ -19,6 +19,7 @@
 		B536BBE71C16466200633A47 /* CarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBE61C16466200633A47 /* CarTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B536BBE91C164E9400633A47 /* CarDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B536BBE81C164E9400633A47 /* CarDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B538BCEB1C17AD1600D17801 /* MapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
+		B538BCED1C17B63C00D17801 /* RefillDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA731C160F46000B8710 /* AppDelegate.swift */; };
 		B56BDA791C160F46000B8710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA771C160F46000B8710 /* Main.storyboard */; };
 		B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */; };
@@ -45,6 +46,7 @@
 		B536BBE61C16466200633A47 /* CarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewController.swift; sourceTree = "<group>"; };
 		B536BBE81C164E9400633A47 /* CarDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarDetailsViewController.swift; sourceTree = "<group>"; };
 		B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointAnnotation.swift; sourceTree = "<group>"; };
+		B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillDetailsViewController.swift; sourceTree = "<group>"; };
 		B56BDA701C160F46000B8710 /* iCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56BDA731C160F46000B8710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B56BDA781C160F46000B8710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				B5F115201C176829006B87A1 /* RefillTableViewController.swift */,
 				B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */,
 				B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */,
+				B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B536BBE11C163CC300633A47 /* RidePoint.swift in Sources */,
+				B538BCED1C17B63C00D17801 /* RefillDetailsViewController.swift in Sources */,
 				B536BBE21C163CC300633A47 /* Ride+CoreDataProperties.swift in Sources */,
 				B536BBE91C164E9400633A47 /* CarDetailsViewController.swift in Sources */,
 				B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */,

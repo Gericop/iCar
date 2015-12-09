@@ -20,6 +20,8 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
     
     @IBOutlet weak var refillType: UITextField!
     
+    @IBOutlet weak var odometerTextField: UITextField!
+    
     @IBOutlet weak var carPicker: UIPickerView!
     
     @IBOutlet weak var locationMapView: MKMapView!
@@ -30,6 +32,8 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchCars()
+        
         carPicker.delegate = self
         carPicker.dataSource = self
         
@@ -39,16 +43,19 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
         }
         
         if let log = refillLog {
-            quantityTextField.text = String(log.refillQnty)
-            unitPriceTextField.text = String(log.unitPrice)
+            quantityTextField.text = String(log.refillQnty!)
+            unitPriceTextField.text = String(log.unitPrice!)
             refreshTotalPrice()
             refillType.text = log.type
-            carPicker.selectRow(0, inComponent: 0, animated: false)
+            odometerTextField.text = String(log.odometer!)
+            
+            initCarPicker()
             
             mapAnnotation = MapPointAnnotation()
             let coords = CLLocationCoordinate2DMake(CLLocationDegrees(log.lat!), CLLocationDegrees(log.lon!))
             mapAnnotation?.setCoordinate(coords)
             locationMapView.addAnnotation(mapAnnotation!)
+            locationMapView.centerCoordinate = coords
         }
         
         initMapView()
@@ -57,6 +64,25 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
     override func viewWillAppear(animated: Bool) {
         fetchCars()
         super.viewWillAppear(animated)
+    }
+    
+    func initCarPicker() {
+        if refillLog == nil {
+            return
+        }
+        
+        let count = fetchedResultsController.fetchedObjects?.count ?? 0
+        let car = refillLog?.car as! Car
+
+        for var i = 0; i < count; i++ {
+            let indexPath = NSIndexPath(forRow: i, inSection: 0)
+            let fetchedObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Car
+            
+            if fetchedObject.licensePlate == car.licensePlate {
+                carPicker.selectRow(i, inComponent: 0, animated: false)
+                break
+            }
+        }
     }
     
     func initMapView() {
@@ -114,7 +140,7 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
         
         print("\(log.lat!) @ \(log.lon!)")
         
-        log.odometer = 0 // TODO
+        log.odometer = Double(odometerTextField.text!) ?? 0
         
         if let oldLog = refillLog {
             // should we refresh time?
@@ -158,6 +184,10 @@ class RefillEditorViewController: UIViewController, UIPickerViewDataSource, UIPi
         
         if refillType.text == "" {
             errorMsg += "Fuel type is empty!\n"
+        }
+        
+        if odometerTextField.text == "" {
+            errorMsg += "Odometer field is empty!\n"
         }
         
         if errorMsg != "" {

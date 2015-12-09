@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Refill log-->
+        <!--Refuel log-->
         <scene sceneID="dgO-O8-x5T">
             <objects>
                 <tableViewController id="3Ft-lJ-8lC" customClass="RefillTableViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                             <outlet property="delegate" destination="3Ft-lJ-8lC" id="izT-Gl-zqB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Refill log" id="fCv-lO-SGp">
+                    <navigationItem key="navigationItem" title="Refuel log" id="fCv-lO-SGp">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="9J0-hT-feo">
                             <connections>
                                 <action selector="searchButtonTap:" destination="3Ft-lJ-8lC" id="L2m-7U-l9t"/>
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="1685" y="-159"/>
         </scene>
-        <!--Refill details-->
+        <!--Refuel details-->
         <scene sceneID="0Hs-WT-Com">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="VFM-vc-7he" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="VFM-vc-7he" customClass="RefillDetailsViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ibo-ie-eAU"/>
                         <viewControllerLayoutGuide type="bottom" id="fYX-nk-pwF"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="fYX-nk-pwF" firstAttribute="top" secondItem="Bnz-g3-GeK" secondAttribute="bottom" id="w3a-tv-v3t"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Refill details" id="boY-Sk-9Fc">
+                    <navigationItem key="navigationItem" title="Refuel details" id="boY-Sk-9Fc">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="qhg-fx-QCt">
                             <connections>
                                 <segue destination="j50-gQ-A5i" kind="push" id="KG8-gS-rNV"/>
@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="2120" y="-159"/>
         </scene>
-        <!--Refill details-->
+        <!--Refuel details-->
         <scene sceneID="jwz-w8-naH">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="j50-gQ-A5i" customClass="RefillEditorViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
@@ -240,7 +240,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRN-4c-5U1">
-                                        <rect key="frame" x="8" y="160" width="304" height="75"/>
+                                        <rect key="frame" x="8" y="198" width="304" height="75"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFg-eT-bmg">
                                                 <rect key="frame" x="72" y="0.0" width="232" height="75"/>
@@ -267,17 +267,48 @@
                                         </constraints>
                                     </view>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMj-pU-WnC">
-                                        <rect key="frame" x="8" y="243" width="304" height="253"/>
+                                        <rect key="frame" x="8" y="281" width="304" height="215"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="253" id="AXn-CY-MWK"/>
+                                            <constraint firstAttribute="height" constant="215" id="AXn-CY-MWK"/>
                                         </constraints>
                                     </mapView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Np-Z1-ZKr">
+                                        <rect key="frame" x="8" y="160" width="304" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="km" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPV-HQ-twI">
+                                                <rect key="frame" x="106" y="0.0" width="198" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eF9-gO-1DA">
+                                                <rect key="frame" x="0.0" y="4" width="98" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="98" id="e1z-Sa-1Yz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="zPV-HQ-twI" firstAttribute="centerY" secondItem="eF9-gO-1DA" secondAttribute="centerY" id="18z-wV-JGY"/>
+                                            <constraint firstItem="zPV-HQ-twI" firstAttribute="leading" secondItem="eF9-gO-1DA" secondAttribute="trailing" constant="8" symbolic="YES" id="5Iy-Vw-F1N"/>
+                                            <constraint firstAttribute="bottom" secondItem="zPV-HQ-twI" secondAttribute="bottom" id="8L5-s9-ssi"/>
+                                            <constraint firstItem="zPV-HQ-twI" firstAttribute="top" secondItem="8Np-Z1-ZKr" secondAttribute="top" id="CH8-aZ-khi"/>
+                                            <constraint firstAttribute="height" constant="30" id="FLd-K8-8MV"/>
+                                            <constraint firstItem="eF9-gO-1DA" firstAttribute="leading" secondItem="8Np-Z1-ZKr" secondAttribute="leading" id="IiE-o4-3Rd"/>
+                                            <constraint firstAttribute="trailing" secondItem="zPV-HQ-twI" secondAttribute="trailing" id="RgL-Z9-TZV"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="96t-XI-SfT" firstAttribute="leading" secondItem="KtN-W2-iFP" secondAttribute="leading" id="0KB-du-a1P"/>
+                                    <constraint firstItem="mRN-4c-5U1" firstAttribute="top" secondItem="8Np-Z1-ZKr" secondAttribute="bottom" constant="8" id="2VB-xE-SYC"/>
                                     <constraint firstItem="Xos-Wy-IRS" firstAttribute="leading" secondItem="BE7-Mi-xHa" secondAttribute="leading" id="6OX-cw-IDs"/>
                                     <constraint firstItem="BE7-Mi-xHa" firstAttribute="centerX" secondItem="GAw-Er-dFb" secondAttribute="centerX" id="7Q6-BP-JAn"/>
                                     <constraint firstItem="96t-XI-SfT" firstAttribute="leading" secondItem="GAw-Er-dFb" secondAttribute="leadingMargin" id="AU6-KK-5N8"/>
+                                    <constraint firstItem="8Np-Z1-ZKr" firstAttribute="trailing" secondItem="GAw-Er-dFb" secondAttribute="trailingMargin" id="BYr-bg-7il"/>
                                     <constraint firstItem="96t-XI-SfT" firstAttribute="top" secondItem="BE7-Mi-xHa" secondAttribute="bottom" constant="8" symbolic="YES" id="HF3-oV-5vc"/>
                                     <constraint firstAttribute="bottom" secondItem="iMj-pU-WnC" secondAttribute="bottom" id="IPg-qs-1Ye"/>
                                     <constraint firstItem="96t-XI-SfT" firstAttribute="trailing" secondItem="GAw-Er-dFb" secondAttribute="trailingMargin" id="KaV-Ta-lq5"/>
@@ -285,12 +316,13 @@
                                     <constraint firstItem="mRN-4c-5U1" firstAttribute="trailing" secondItem="iMj-pU-WnC" secondAttribute="trailing" id="PCF-l3-wUi"/>
                                     <constraint firstItem="KtN-W2-iFP" firstAttribute="trailing" secondItem="mRN-4c-5U1" secondAttribute="trailing" id="QJw-Bn-jox"/>
                                     <constraint firstItem="BE7-Mi-xHa" firstAttribute="trailing" secondItem="96t-XI-SfT" secondAttribute="trailing" id="U8H-VV-TIB"/>
+                                    <constraint firstItem="8Np-Z1-ZKr" firstAttribute="top" secondItem="KtN-W2-iFP" secondAttribute="bottom" constant="8" id="VqP-AT-Tah"/>
                                     <constraint firstItem="KtN-W2-iFP" firstAttribute="trailing" secondItem="96t-XI-SfT" secondAttribute="trailing" id="XIo-77-xV4"/>
                                     <constraint firstItem="KtN-W2-iFP" firstAttribute="top" secondItem="96t-XI-SfT" secondAttribute="bottom" constant="8" symbolic="YES" id="ZgL-zE-6Gz"/>
+                                    <constraint firstItem="8Np-Z1-ZKr" firstAttribute="leading" secondItem="GAw-Er-dFb" secondAttribute="leadingMargin" id="cFA-fe-8ru"/>
                                     <constraint firstItem="mRN-4c-5U1" firstAttribute="leading" secondItem="KtN-W2-iFP" secondAttribute="leading" id="dUV-PK-Tqb"/>
                                     <constraint firstItem="BE7-Mi-xHa" firstAttribute="top" secondItem="Xos-Wy-IRS" secondAttribute="bottom" constant="8" symbolic="YES" id="dji-O0-35r"/>
                                     <constraint firstItem="Xos-Wy-IRS" firstAttribute="trailing" secondItem="BE7-Mi-xHa" secondAttribute="trailing" id="feF-jJ-DIy"/>
-                                    <constraint firstItem="mRN-4c-5U1" firstAttribute="top" secondItem="KtN-W2-iFP" secondAttribute="bottom" constant="8" symbolic="YES" id="hET-Tu-Nrs"/>
                                     <constraint firstItem="iMj-pU-WnC" firstAttribute="top" secondItem="mRN-4c-5U1" secondAttribute="bottom" constant="8" symbolic="YES" id="oth-Oz-egH"/>
                                     <constraint firstItem="iMj-pU-WnC" firstAttribute="leading" secondItem="mRN-4c-5U1" secondAttribute="leading" id="s9c-IQ-KAF"/>
                                     <constraint firstItem="96t-XI-SfT" firstAttribute="leading" secondItem="BE7-Mi-xHa" secondAttribute="leading" id="xMW-El-47F"/>
@@ -305,7 +337,7 @@
                             <constraint firstItem="GAw-Er-dFb" firstAttribute="leading" secondItem="b5I-uz-QYT" secondAttribute="leading" id="l3r-4R-JoJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Refill details" id="Rqf-Zy-xj4">
+                    <navigationItem key="navigationItem" title="Refuel details" id="Rqf-Zy-xj4">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Nwf-zq-EGB">
                             <connections>
                                 <action selector="saveButtonTap:" destination="j50-gQ-A5i" id="biS-pd-wd9"/>
@@ -316,6 +348,7 @@
                     <connections>
                         <outlet property="carPicker" destination="TFg-eT-bmg" id="Kbj-UP-teD"/>
                         <outlet property="locationMapView" destination="iMj-pU-WnC" id="KwJ-Lo-XsQ"/>
+                        <outlet property="odometerTextField" destination="zPV-HQ-twI" id="bqB-TH-ate"/>
                         <outlet property="quantityTextField" destination="XWR-e3-pTf" id="S8X-M0-xfO"/>
                         <outlet property="refillType" destination="bf9-14-8i5" id="F9c-E3-kfT"/>
                         <outlet property="totalLabel" destination="uPS-4z-Mg0" id="N9O-uf-gAn"/>
@@ -345,11 +378,11 @@
             </objects>
             <point key="canvasLocation" x="621" y="-159"/>
         </scene>
-        <!--Refills-->
+        <!--Refuels-->
         <scene sceneID="Wtx-xo-l54">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sUl-QD-Au5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Refills" image="icon_gas" id="fCA-6X-Ket"/>
+                    <tabBarItem key="tabBarItem" title="Refuels" image="icon_gas" id="fCA-6X-Ket"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tag-w8-WSj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -595,7 +628,7 @@
         <image name="icon_ride" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aux-2u-3gG"/>
+        <segue reference="KG8-gS-rNV"/>
         <segue reference="JMf-qX-Yac"/>
     </inferredMetricsTieBreakers>
 </document>
