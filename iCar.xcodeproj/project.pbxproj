@@ -29,6 +29,7 @@
 		B56BDA8B1C160F6A000B8710 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */; };
 		B56BDA8D1C160F71000B8710 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BDA8C1C160F71000B8710 /* CoreMotion.framework */; };
 		B5CBA5911C1732F20026F9C3 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CBA5901C1732F20026F9C3 /* SensorManager.swift */; settings = {ASSET_TAGS = (); }; };
+		B5E748C71C18B32A00A41559 /* RideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E748C61C18B32A00A41559 /* RideTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5F115211C176829006B87A1 /* RefillTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F115201C176829006B87A1 /* RefillTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5F115231C176EBF006B87A1 /* RefillEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		B56BDA8A1C160F6A000B8710 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B56BDA8C1C160F71000B8710 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B5CBA5901C1732F20026F9C3 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		B5E748C61C18B32A00A41559 /* RideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewController.swift; sourceTree = "<group>"; };
 		B5F115201C176829006B87A1 /* RefillTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillTableViewController.swift; sourceTree = "<group>"; };
 		B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 				B5F115221C176EBF006B87A1 /* RefillEditorViewController.swift */,
 				B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */,
 				B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */,
+				B5E748C61C18B32A00A41559 /* RideTableViewController.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				B536BBDE1C163CC300633A47 /* Car+CoreDataProperties.swift in Sources */,
 				B536BBDF1C163CC300633A47 /* Car.swift in Sources */,
 				B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */,
+				B5E748C71C18B32A00A41559 /* RideTableViewController.swift in Sources */,
 				B5CBA5911C1732F20026F9C3 /* SensorManager.swift in Sources */,
 				B536BBDC1C163CC300633A47 /* RefillLog+CoreDataProperties.swift in Sources */,
 				B536BBDD1C163CC300633A47 /* RefillLog.swift in Sources */,
