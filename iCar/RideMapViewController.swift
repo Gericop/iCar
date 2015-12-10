@@ -21,6 +21,20 @@ class RideMapViewController: UIViewController, NSFetchedResultsControllerDelegat
 
         //navigationController?.title = ride.title
         navigationItem.title = ride.title
+        let points = ride.points?.allObjects as! [RidePoint]
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
+        
+        for p in points {
+            let mapAnnotation = MapPointAnnotation()
+            let coords = CLLocationCoordinate2DMake(CLLocationDegrees(p.lat!), CLLocationDegrees(p.lon!))
+            mapAnnotation.setCoordinate(coords)
+            mapAnnotation.title = "\(Double(p.speed!) * 3.6) km/h"
+            mapAnnotation.subtitle = dateFormatter.stringFromDate(p.time!)
+            mapView.addAnnotation(mapAnnotation)
+            mapView.centerCoordinate = coords
+        }
     }
 
     override func didReceiveMemoryWarning() {
