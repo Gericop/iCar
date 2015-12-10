@@ -85,12 +85,16 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let ride = currentRide {
+            if heading == nil {
+                heading = manager.heading?.trueHeading ?? manager.heading?.magneticHeading
+            }
+            
             createRidePoint(ride, heading: heading, location: locations.last)
         }
     }
     
     private func createRidePoint(ride:Ride, heading:Double?, location:CLLocation?) {
-        print("loc: \(location?.coordinate.latitude) @ \(location?.coordinate.longitude), heading: \(heading ?? -Double.infinity)")
+        print("loc: \(location!.coordinate.latitude) @ \(location!.coordinate.longitude), heading: \(heading ?? -Double.infinity)")
         let moc = AppDelegate.sharedAppDelegate.managedObjectContext
         let entity = NSEntityDescription.entityForName("RidePoint", inManagedObjectContext: moc)
         
