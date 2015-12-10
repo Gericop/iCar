@@ -657,7 +657,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="RkA-2b-0CX" kind="push" id="YHS-p6-u7d"/>
+                                    <segue destination="RkA-2b-0CX" kind="push" identifier="RideDetails" id="YHS-p6-u7d"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -667,6 +667,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Rides" id="Z15-Sw-xSD">
+                        <barButtonItem key="leftBarButtonItem" title="Stop recording" id="wgH-58-Mf6">
+                            <connections>
+                                <segue destination="RkA-2b-0CX" kind="push" identifier="StopRide" id="FDU-sP-eYo"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GCO-88-oBT">
                             <connections>
                                 <segue destination="F49-tr-w6J" kind="push" identifier="AddRide" id="iOX-QI-zzI"/>
@@ -1056,10 +1061,10 @@
             </objects>
             <point key="canvasLocation" x="2129" y="1262"/>
         </scene>
-        <!--View Controller-->
+        <!--Ride Map View Controller-->
         <scene sceneID="QV2-K9-YWx">
             <objects>
-                <viewController id="D7E-15-FQc" sceneMemberID="viewController">
+                <viewController id="D7E-15-FQc" customClass="RideMapViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Yc-aO-Zxs"/>
                         <viewControllerLayoutGuide type="bottom" id="jNj-3n-jtq"/>
@@ -1081,6 +1086,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bC1-ro-PYC"/>
+                    <connections>
+                        <outlet property="mapView" destination="DZX-T6-xnF" id="3SB-ST-qD0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yjd-Xb-xWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1113,7 +1121,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KG8-gS-rNV"/>
-        <segue reference="iOX-QI-zzI"/>
+        <segue reference="YHS-p6-u7d"/>
+        <segue reference="xat-Ty-Y5y"/>
         <segue reference="JMf-qX-Yac"/>
     </inferredMetricsTieBreakers>
 </document>

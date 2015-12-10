@@ -20,7 +20,14 @@ class RideDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         titleLabel.text = ride.title
-        carLabel.text = "\(ride.car?.name) [\(ride.car?.licensePlate)]"
+        
+        let car = ride.car!
+        
+        carLabel.text = "\(car.name!) [\(car.licensePlate!)]"
+        
+        if ride.endDate == nil {
+            navigationItem.rightBarButtonItem?.enabled = false
+        }
     }
 
     
@@ -28,10 +35,14 @@ class RideDetailsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier != "EditRide" {
+        if segue.identifier == "EditRide" {
             let detailsVC = segue.destinationViewController as! RideEditorViewController
             
             detailsVC.ride = ride
+        } else if segue.identifier == "MapSegue" {
+            let mapVC = segue.destinationViewController as! RideMapViewController
+            
+            mapVC.ride = ride
         }
     }
     

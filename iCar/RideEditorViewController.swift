@@ -46,12 +46,59 @@ class RideEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
     
     @IBAction func startRideButtonTap(sender: AnyObject) {
-        if let r = ride {
-            // save update
-        } else {
-            // start location updates
-            //SensorManager.getManager().startRide(ride: Ride)
+        if validateFields() {
+            if let r = ride {
+                updateRide(r)
+            } else {
+                let ride = createRide()
+                SensorManager.getManager().startRide(ride)
+            }
+            
+            let viewControllers = self.navigationController?.viewControllers
+            
+            for vc in viewControllers! {
+                if vc.isKindOfClass(RideTableViewController) {
+                    self.navigationController?.popToViewController(vc, animated: true)
+                    break
+                }
+            }
         }
+    }
+    
+    func updateRide(ride:Ride) {
+        ride.title = titleField.text
+        
+        // getting car
+        let row = carPicker.selectedRowInComponent(0)
+        
+        let indexPath = NSIndexPath(forRow: row, inSection: 0)
+        let car = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Car
+        
+        ride.car = car
+    }
+    
+    func createRide() -> Ride {
+        let moc = AppDelegate.sharedAppDelegate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("Ride",
+            inManagedObjectContext: moc)
+        
+        let ride = Ride(entity: entity!,
+            insertIntoManagedObjectContext:moc)
+        
+        updateRide(ride)
+        
+        ride.startDate = NSDate()
+        
+        AppDelegate.sharedAppDelegate.saveContext()
+    
+        return ride
+    }
+    
+    func validateFields() -> Bool {
+        if titleField.text == "" {
+            return false
+        }
+        return true
     }
     
     func initCarPicker() {

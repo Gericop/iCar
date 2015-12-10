@@ -31,6 +31,14 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
         super.viewWillAppear(animated)
         
         SensorManager.getManager().requestPermission()
+        
+        if SensorManager.getManager().isRecording() {
+            self.navigationItem.rightBarButtonItem?.enabled = false
+            self.navigationItem.leftBarButtonItem?.enabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.enabled = true
+            self.navigationItem.leftBarButtonItem?.enabled = false
+        }
     }
     
     func fetchRefills() {
@@ -73,7 +81,14 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .MediumStyle
         dateFormatter.timeStyle = .MediumStyle
-        cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(ride.startDate!)) - \(dateFormatter.stringFromDate(ride.endDate!))"
+        
+        if let endDate = ride.endDate {
+            cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(ride.startDate!)) - \(dateFormatter.stringFromDate(endDate))"
+        } else {
+            cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(ride.startDate!)) - in progress..."
+        }
+        
+        
         
         return cell
     }
@@ -136,11 +151,15 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier != "AddRide" {
+        if segue.identifier == "RideDetails" {
             let ride = fetchedResultsController.objectAtIndexPath(tableView.indexPathForSelectedRow!) as! Ride
             let detailsVC = segue.destinationViewController as! RideDetailsViewController
             
             detailsVC.ride = ride
+        } else if segue.identifier == "StopRide" {
+            let detailsVC = segue.destinationViewController as! RideDetailsViewController
+            
+            detailsVC.ride = SensorManager.getManager().stopRide()
         }
     }
 
