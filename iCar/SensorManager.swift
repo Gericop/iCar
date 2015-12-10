@@ -57,13 +57,13 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         currentRide?.startDate = NSDate()
         
         motionManager.startAccelerometerUpdates()
-        locationManager.startUpdatingHeading()
         locationManager.startUpdatingLocation()
+        locationManager.startUpdatingHeading()
     }
     
     func stopRide() -> Ride {
-        locationManager.stopUpdatingLocation()
         locationManager.stopUpdatingHeading()
+        locationManager.stopUpdatingLocation()
         motionManager.stopAccelerometerUpdates()
         
         currentRide?.endDate = NSDate()
