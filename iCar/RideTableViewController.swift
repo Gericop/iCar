@@ -137,10 +137,10 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != "AddRide" {
-            /*let log = fetchedResultsController.objectAtIndexPath(tableView.indexPathForSelectedRow!) as! RefillLog
-            let detailsVC = segue.destinationViewController as! RefillDetailsViewController
+            let ride = fetchedResultsController.objectAtIndexPath(tableView.indexPathForSelectedRow!) as! Ride
+            let detailsVC = segue.destinationViewController as! RideDetailsViewController
             
-            detailsVC.refillLog = log*/
+            detailsVC.ride = ride
         }
     }
 

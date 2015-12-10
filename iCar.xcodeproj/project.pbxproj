@@ -21,6 +21,7 @@
 		B538BCEB1C17AD1600D17801 /* MapPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */; settings = {ASSET_TAGS = (); }; };
 		B538BCED1C17B63C00D17801 /* RefillDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B5495D6E1C18E4AB00D4A95D /* RideDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495D6D1C18E4AB00D4A95D /* RideDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B5495D701C18F01300D4A95D /* RideEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5495D6F1C18F01300D4A95D /* RideEditorViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B56BDA741C160F46000B8710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA731C160F46000B8710 /* AppDelegate.swift */; };
 		B56BDA791C160F46000B8710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56BDA771C160F46000B8710 /* Main.storyboard */; };
 		B56BDA7C1C160F46000B8710 /* iCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */; };
@@ -50,6 +51,7 @@
 		B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPointAnnotation.swift; sourceTree = "<group>"; };
 		B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefillDetailsViewController.swift; sourceTree = "<group>"; };
 		B5495D6D1C18E4AB00D4A95D /* RideDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideDetailsViewController.swift; sourceTree = "<group>"; };
+		B5495D6F1C18F01300D4A95D /* RideEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideEditorViewController.swift; sourceTree = "<group>"; };
 		B56BDA701C160F46000B8710 /* iCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56BDA731C160F46000B8710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B56BDA781C160F46000B8710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				B538BCEC1C17B63C00D17801 /* RefillDetailsViewController.swift */,
 				B5E748C61C18B32A00A41559 /* RideTableViewController.swift */,
 				B5495D6D1C18E4AB00D4A95D /* RideDetailsViewController.swift */,
+				B5495D6F1C18F01300D4A95D /* RideEditorViewController.swift */,
 			);
 			path = iCar;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				B5F115211C176829006B87A1 /* RefillTableViewController.swift in Sources */,
 				B536BBDE1C163CC300633A47 /* Car+CoreDataProperties.swift in Sources */,
 				B536BBDF1C163CC300633A47 /* Car.swift in Sources */,
+				B5495D701C18F01300D4A95D /* RideEditorViewController.swift in Sources */,
 				B5495D6E1C18E4AB00D4A95D /* RideDetailsViewController.swift in Sources */,
 				B536BBE01C163CC300633A47 /* RidePoint+CoreDataProperties.swift in Sources */,
 				B5E748C71C18B32A00A41559 /* RideTableViewController.swift in Sources */,
