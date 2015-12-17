@@ -91,6 +91,8 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
         // coloring from car
         if let rowColor = (ride.car!).rowColor {
             cell.backgroundColor = CarColorPicker.getColorFromInt(Int(rowColor))
+        } else {
+            cell.backgroundColor = UIColor.clearColor()
         }
         
         return cell

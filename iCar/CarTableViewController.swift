@@ -84,6 +84,8 @@ class CarTableViewController: UITableViewController, NSFetchedResultsControllerD
         // coloring from car
         if let rowColor = car.rowColor {
             cell.backgroundColor = CarColorPicker.getColorFromInt(Int(rowColor))
+        } else {
+            cell.backgroundColor = UIColor.clearColor()
         }
 
         return cell

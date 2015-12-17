@@ -79,6 +79,8 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
         // coloring from car
         if let rowColor = (refill.car as! Car).rowColor {
             cell.backgroundColor = CarColorPicker.getColorFromInt(Int(rowColor))
+        } else {
+            cell.backgroundColor = UIColor.clearColor()
         }
 
         return cell
