@@ -16,8 +16,6 @@ class AccelerationView: UIView {
     
     let padding:CGFloat = 20
     
-    let zero = "0"
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         setNeedsDisplay()

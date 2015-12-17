@@ -23,6 +23,11 @@ class CarColorPicker: UIView {
         return bounds.width / CGFloat(colorCount)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setNeedsDisplay()
+    }
+    
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         

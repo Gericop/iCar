@@ -48,11 +48,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Refuel log" id="fCv-lO-SGp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="9J0-hT-feo">
-                            <connections>
-                                <action selector="searchButtonTap:" destination="3Ft-lJ-8lC" id="L2m-7U-l9t"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FEW-Xq-6yr">
                             <connections>
                                 <segue destination="j50-gQ-A5i" kind="push" identifier="AddRefillLog" id="aux-2u-3gG"/>
@@ -1146,9 +1141,9 @@
         <image name="icon_ride" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KG8-gS-rNV"/>
+        <segue reference="JMf-qX-Yac"/>
         <segue reference="YHS-p6-u7d"/>
         <segue reference="xat-Ty-Y5y"/>
-        <segue reference="JMf-qX-Yac"/>
+        <segue reference="aux-2u-3gG"/>
     </inferredMetricsTieBreakers>
 </document>
