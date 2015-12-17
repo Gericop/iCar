@@ -1011,7 +1011,7 @@
                                         <rect key="frame" x="8" y="171" width="304" height="30"/>
                                         <state key="normal" title="Acceleration"/>
                                         <connections>
-                                            <segue destination="TQx-1K-PZR" kind="push" id="IMb-2o-0rf"/>
+                                            <segue destination="TQx-1K-PZR" kind="push" identifier="AccelSegue" id="IMb-2o-0rf"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2y-3A-Ebm">
@@ -1105,10 +1105,10 @@
             </objects>
             <point key="canvasLocation" x="2561" y="1262"/>
         </scene>
-        <!--View Controller-->
+        <!--Ride Acceleration View Controller-->
         <scene sceneID="trs-eo-RY2">
             <objects>
-                <viewController id="TQx-1K-PZR" sceneMemberID="viewController">
+                <viewController id="TQx-1K-PZR" customClass="RideAccelerationViewController" customModule="iCar" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ANO-Gh-vBg"/>
                         <viewControllerLayoutGuide type="bottom" id="dHS-Na-7hf"/>
@@ -1116,9 +1116,24 @@
                     <view key="view" contentMode="scaleToFill" id="WCu-mq-UU5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pHa-Wg-j9x" customClass="AccelerationView" customModule="iCar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dHS-Na-7hf" firstAttribute="top" secondItem="pHa-Wg-j9x" secondAttribute="bottom" id="5yE-hh-9w8"/>
+                            <constraint firstItem="pHa-Wg-j9x" firstAttribute="leading" secondItem="WCu-mq-UU5" secondAttribute="leading" id="EDU-hd-dea"/>
+                            <constraint firstItem="pHa-Wg-j9x" firstAttribute="top" secondItem="ANO-Gh-vBg" secondAttribute="bottom" id="dMF-He-U6R"/>
+                            <constraint firstAttribute="trailing" secondItem="pHa-Wg-j9x" secondAttribute="trailing" id="hBf-yh-uSH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uNS-Nf-hav"/>
+                    <connections>
+                        <outlet property="accelView" destination="pHa-Wg-j9x" id="vcL-yZ-PaB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDM-5v-6tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

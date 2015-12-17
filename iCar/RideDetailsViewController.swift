@@ -43,6 +43,10 @@ class RideDetailsViewController: UIViewController {
             let mapVC = segue.destinationViewController as! RideMapViewController
             
             mapVC.ride = ride
+        } else if segue.identifier == "AccelSegue" {
+            let accVC = segue.destinationViewController as! RideAccelerationViewController
+            
+            accVC.ride = ride
         }
     }
     
