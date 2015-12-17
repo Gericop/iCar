@@ -80,6 +80,11 @@ class CarTableViewController: UITableViewController, NSFetchedResultsControllerD
         cell.licensePlateLabel.text = car.licensePlate
         cell.enablerSwitch.on = car.enabled != 0
         cell.car = car
+        
+        // coloring from car
+        if let rowColor = car.rowColor {
+            cell.backgroundColor = CarColorPicker.getColorFromInt(Int(rowColor))
+        }
 
         return cell
     }

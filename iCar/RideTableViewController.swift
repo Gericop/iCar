@@ -88,7 +88,10 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
             cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(ride.startDate!)) - in progress..."
         }
         
-        
+        // coloring from car
+        if let rowColor = (ride.car!).rowColor {
+            cell.backgroundColor = CarColorPicker.getColorFromInt(Int(rowColor))
+        }
         
         return cell
     }

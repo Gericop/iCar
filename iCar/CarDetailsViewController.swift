@@ -13,6 +13,7 @@ class CarDetailsViewController: UIViewController {
 
     @IBOutlet weak var carName: UITextField!
     @IBOutlet weak var carLicensePlate: UITextField!
+    @IBOutlet weak var carColor: CarColorPicker!
     
     var car : Car?
     
@@ -59,6 +60,7 @@ class CarDetailsViewController: UIViewController {
     func updateCar(c:Car) {
         c.name = carName.text
         c.licensePlate = carLicensePlate.text
+        c.rowColor = carColor.getSelectedColor()
         
         AppDelegate.sharedAppDelegate.saveContext()
     }
@@ -71,10 +73,7 @@ class CarDetailsViewController: UIViewController {
         let c = Car(entity: entity!,
             insertIntoManagedObjectContext:moc)
         
-        c.name = carName.text
-        c.licensePlate = carLicensePlate.text
-        
-        AppDelegate.sharedAppDelegate.saveContext()
+        updateCar(c)
     }
     /*
     // MARK: - Navigation

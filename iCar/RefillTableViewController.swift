@@ -75,6 +75,11 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
         dateFormatter.timeStyle = .MediumStyle
         cell.detailTextLabel?.text =
             dateFormatter.stringFromDate(refill.time!)
+        
+        // coloring from car
+        if let rowColor = (refill.car as! Car).rowColor {
+            cell.backgroundColor = CarColorPicker.getColorFromInt(Int(rowColor))
+        }
 
         return cell
     }
