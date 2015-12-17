@@ -10,16 +10,15 @@ import UIKit
 import MapKit
 import CoreData
 
-class RideMapViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class RideMapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
-    
+
     var ride: Ride!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //navigationController?.title = ride.title
         navigationItem.title = ride.title
         let points = ride.points?.allObjects as! [RidePoint]
         
@@ -35,11 +34,6 @@ class RideMapViewController: UIViewController, NSFetchedResultsControllerDelegat
             mapView.addAnnotation(mapAnnotation)
             mapView.centerCoordinate = coords
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

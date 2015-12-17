@@ -37,6 +37,10 @@ class RideEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
                 self.navigationItem.prompt = "Enable location services!"
                 self.navigationItem.rightBarButtonItem?.enabled = false
             }
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss"
+            titleField.text = "\(dateFormatter.stringFromDate(NSDate())) ride"
         }
     }
     
