@@ -107,8 +107,9 @@ class SensorManager:NSObject, CLLocationManagerDelegate {
         point.time = location?.timestamp ?? NSDate()
         
         // if the iphone is facing the Z direction pointing upwards along the Y, in portrait mode
-        var accFrontal = motionManager.accelerometerData?.acceleration.z ?? (drand48() * 5) - 2.5 //-Double.infinity
-        var accLateral = motionManager.accelerometerData?.acceleration.x ?? (drand48() * 5) - 2.5 //-Double.infinity
+        // could not test it, i don't have an iBrick :( hence the random values on nil
+        let accFrontal = motionManager.accelerometerData?.acceleration.z ?? (drand48() * 5) - 2.5 //-Double.infinity
+        let accLateral = motionManager.accelerometerData?.acceleration.x ?? (drand48() * 5) - 2.5 //-Double.infinity
         
         point.accFrontal = accFrontal
         point.accLateral = accLateral

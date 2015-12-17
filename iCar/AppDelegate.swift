@@ -18,6 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     class var sharedAppDelegate: AppDelegate {
         return UIApplication.sharedApplication().delegate as! AppDelegate
     }
+    
+    func checkCars(ui:UIViewController) -> Bool {
+        let fetchRequest = NSFetchRequest(entityName:"Car")
+        let carCount = AppDelegate.sharedAppDelegate.managedObjectContext.countForFetchRequest(fetchRequest, error: nil)
+        
+        if carCount == 0 {
+            let alert = UIAlertController(title: "Error", message: "There are no cars in the database.\nAdd at least one!", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel,
+                handler: nil)
+            
+            alert.addAction(cancelAction)
+            
+            ui.presentViewController(alert, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        return true
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

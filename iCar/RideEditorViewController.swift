@@ -100,6 +100,14 @@ class RideEditorViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     func validateFields() -> Bool {
         if titleField.text == "" {
+            let alert = UIAlertController(title: "Error", message: "The title is empty.", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .Cancel,
+                handler: nil)
+            
+            alert.addAction(cancelAction)
+            
+            presentViewController(alert, animated: true, completion: nil)
             return false
         }
         return true

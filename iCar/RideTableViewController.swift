@@ -150,10 +150,6 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
         }
     }
     
-    @IBAction func searchButtonTap(sender: AnyObject) {
-        SensorManager.getManager().requestPermission()
-    }
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -170,5 +166,11 @@ class RideTableViewController: UITableViewController, NSFetchedResultsController
         }
     }
 
-
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "AddRide" {
+            return AppDelegate.sharedAppDelegate.checkCars(self)
+        }
+        
+        return true
+    }
 }

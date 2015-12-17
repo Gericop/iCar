@@ -23,6 +23,10 @@ class CarDetailsViewController: UIViewController {
         if let c = car {
             carName.text = c.name
             carLicensePlate.text = c.licensePlate
+            
+            if let rowColor = c.rowColor {
+                carColor.setSelected(Int(rowColor))
+            }
         }
     }
     

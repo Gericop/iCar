@@ -150,16 +150,24 @@
 				B5495D721C18FA2C00D4A95D /* Rides */,
 				B5495D711C18FA0700D4A95D /* Refuels */,
 				B5F1151F1C176794006B87A1 /* Model */,
+				B5CCBED31C2352E80054C0E6 /* Utils */,
 				B56BDA731C160F46000B8710 /* AppDelegate.swift */,
 				B56BDA771C160F46000B8710 /* Main.storyboard */,
 				B56BDA7D1C160F46000B8710 /* Assets.xcassets */,
 				B56BDA7F1C160F46000B8710 /* LaunchScreen.storyboard */,
 				B56BDA821C160F46000B8710 /* Info.plist */,
 				B56BDA7A1C160F46000B8710 /* iCar.xcdatamodeld */,
+			);
+			path = iCar;
+			sourceTree = "<group>";
+		};
+		B5CCBED31C2352E80054C0E6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
 				B5CBA5901C1732F20026F9C3 /* SensorManager.swift */,
 				B538BCEA1C17AD1600D17801 /* MapPointAnnotation.swift */,
 			);
-			path = iCar;
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		B5F1151F1C176794006B87A1 /* Model */ = {

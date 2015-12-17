@@ -42,7 +42,6 @@ class CarColorPicker: UIView {
                 
                 UIColor.lightGrayColor().setStroke()
                 CGContextStrokeRect(context, CGRect(x: 0, y: 0, width: colorWidth, height: bounds.height))
-                //CGContextStrokePath(<#T##c: CGContext?##CGContext?#>)
             } else {
                 let color = UIColor(hue: i*(1.0 / colorCount), saturation: saturation, brightness: 1.0, alpha: 1.0)
                 color.setFill()
@@ -97,6 +96,51 @@ class CarColorPicker: UIView {
         let b = Int(components[2] * 255)
         
         return r << 16 + g << 8 + b
+    }
+    
+    func setSelected(color:Int) {
+        let hue = getHueFromRGB(color)
+        
+        var delta = Double.infinity
+        
+        for var i:CGFloat = 0; i < colorCount; i++ {
+            let currentHue = Double(i * (1.0 / colorCount))
+            
+            if abs(hue - currentHue) < delta {
+                delta = abs(hue - currentHue)
+                selectedColorIndex = Int(i)
+            }
+        }
+        
+        setNeedsDisplay()
+    }
+    
+    func getHueFromRGB(color:Int) -> Double {
+        let rgb = [Double(color >> 16 & 0xff) / 255.0, Double(color >> 8 & 0xff) / 255.0, Double(color & 0xff) / 255.0]
+        
+        let cMax = rgb.maxElement()!
+        let cMin = rgb.minElement()!
+        let delta = cMax - cMin
+        
+        var hue = 0.0
+        
+        if delta == 0 {
+            hue = 0.0
+        } else if cMax == rgb[0] {
+            hue = ((rgb[1] - rgb[2]) / delta) % 6
+        } else if cMax == rgb[1] {
+            hue = ((rgb[2] - rgb[0]) / delta) + 2
+        } else /*if cMax == rgb[2]*/ {
+            hue = ((rgb[0] - rgb[1]) / delta) + 4
+        }
+        
+        hue = (hue * 60.0) / 360.0
+        
+        if hue < 0 {
+            hue += 1.0
+        }
+        
+        return hue
     }
     
     static func getColorFromInt(color:Int) -> UIColor {

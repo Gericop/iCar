@@ -144,7 +144,7 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier != "AddRefillLog" && segue.identifier != "SearchLog" {
+        if segue.identifier != "AddRefillLog" {
             let log = fetchedResultsController.objectAtIndexPath(tableView.indexPathForSelectedRow!) as! RefillLog
             let detailsVC = segue.destinationViewController as! RefillDetailsViewController
             
@@ -152,5 +152,11 @@ class RefillTableViewController: UITableViewController, NSFetchedResultsControll
         }
     }
     
-
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "AddRefillLog" {
+            return AppDelegate.sharedAppDelegate.checkCars(self)
+        }
+        
+        return true
+    }
 }
