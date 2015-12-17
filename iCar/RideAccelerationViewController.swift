@@ -15,6 +15,8 @@ class RideAccelerationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = ride.title
 
         accelView.setRide(ride)
     }
